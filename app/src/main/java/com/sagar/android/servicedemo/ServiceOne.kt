@@ -30,8 +30,9 @@ class ServiceOne : Service() {
         android OS and again re started by the OS.
 
                                 Auto start      Intent
-        start sticky            YES             No
-        sticky not sticky         
+        start sticky            Yes             No
+        sticky not sticky       No              No
+        redeliver intent        Yes             No
          */
         return super.onStartCommand(intent, flags, startId)
     }
