@@ -5,7 +5,18 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 
+/*
+this ia started background service
+ */
 class ServiceOne : Service() {
+
+    override fun onCreate() {
+        super.onCreate()
+        Log.i(
+            "serviceDemo",
+            "New thread is started"
+        )
+    }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(
@@ -27,5 +38,13 @@ class ServiceOne : Service() {
 
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(
+            "serviceDemo",
+            "Thread is destroyed"
+        )
     }
 }
